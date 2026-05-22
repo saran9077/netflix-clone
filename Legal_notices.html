@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Help Center - Legal Notices</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #000;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      border-bottom: 1px solid #2f2f2f;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .logo img {
+      width: 110px;
+      height: auto;
+      margin-right: 12px;
+    }
+
+    .logo span {
+      color: #fff;
+      font-weight: 400;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .buttons button {
+      margin-left: 10px;
+      padding: 8px 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .join {
+      background-color: #000;
+      color: #fff;
+      border: 1px solid #fff;
+      background: transparent;
+
+
+    }
+
+    .signin {
+      background-color: #e50914;
+      color: #fff;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 85%;
+      margin: 80px auto;
+      padding: 0 25px;
+      line-height: 1.7;
+    }
+
+    .container a {
+      /* color: #e50914; */
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .container a:hover {
+      text-decoration: underline;
+      color: #e50914;
+
+    }
+
+    .back-link {
+      font-size: 15px;
+      margin-bottom: 10px;
+      display: inline-block;
+      color: #000;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #141414;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin: 25px 0 10px;
+      color: #141414;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    .print-btn {
+      float: right;
+      background: #f8f8f8;
+      border: 1px solid #ccc;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: 600;
+      color: #333;
+      transition: 0.3s ease;
+    }
+
+    .print-btn:hover {
+      background: #ddd;
+    }
+
+    .last-updated {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(to top, #000 85%, #141414);
+      text-align: center;
+      padding: 50px 20px;
+      color: #ccc;
+      margin-top: 60px;
+    }
+
+    .language {
+      background-color: #000;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 5px;
+      border: 1px solid #555;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #e50914;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 30px;
+      }
+
+      .buttons {
+        margin-top: 10px;
+      }
+
+      .container {
+        margin: 60px auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        padding: 15px 25px;
+      }
+
+      .logo img {
+        width: 80px;
+      }
+
+      .logo span {
+        font-size: 14px;
+      }
+
+      .buttons button {
+        padding: 6px 10px;
+        font-size: 13px;
+      }
+
+      .container {
+        margin: 40px auto;
+        padding: 10px 15px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      .print-btn {
+        float: none;
+        display: block;
+        margin: 15px 0;
+        width: 100%;
+      }
+
+      footer {
+        padding: 40px 15px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="index1.html"><img src="logo.png" alt="Netflix Logo"></a>
+      <span> Help Center</span>
+    </div>
+    <div class="buttons">
+      <button class="join">Join Netflix</button>
+      <a href="sign up.html"><button class="signin">Sign In</button></a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <section class="container">
+    <a href="#" class="back-link">← Back to Help Home</a>
+    <button class="print-btn">🖨 Print</button>
+
+    <h1>Legal Notices</h1>
+    <p>The Netflix service, including all content provided on the Netflix service, is protected by copyright, trademark,
+      trade secret or other intellectual property laws and treaties.</p>
+
+    <h2>Copyrights</h2>
+    <p>The copyrights in the content on our service are owned by many great producers and production companies,
+      including Netflix. If you believe your or someone else's copyrights are being infringed upon through the Netflix
+      service, let us know by completing the Copyright Infringement Claims form (<a
+        href="#">www.netflix.com/copyrights</a>).</p>
+
+    <h2>Trademarks</h2>
+    <p>Netflix, the N Logo and its sonic Tudum ident are trademarks of Netflix, Inc.</p>
+    <p>Unless you have our permission, do not use the Netflix marks as your own or in any manner that implies
+      sponsorship or endorsement by Netflix.</p>
+    <p>A product branded with the Netflix name or logo is a reflection of Netflix. Unless you are one of our licensees,
+      we don't allow others to make, sell, or give away anything with our name or logo on it.</p>
+
+    <h2>Patents</h2>
+    <p>Netflix applications and services are covered by patents. For information on patents related to our services
+      please visit <a href="#">www.netflix.com/patents</a>.</p>
+
+    <h2>Third Party Notices</h2>
+    <p>Netflix applications, software development kits (SDKs) and other Netflix products may contain software available
+      under open source or free software licenses (“Open Source Software”).</p>
+    <p>The Netflix Terms of Use do not alter any rights or obligations you may have under those Open Source Software
+      licenses.</p>
+    <p>Additional information about Open Source Software, including required acknowledgements, license terms and
+      notices, can be found below.</p>
+
+    <p class="last-updated"><strong>Last Updated:</strong> September 25, 2023</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <select class="language">
+      <option>English</option>
+      <option>हिन्दी</option>
+    </select>
+
+    <div class="footer-links">
+      <a href="#">Terms of Use</a>
+      <a href="#">Privacy</a>
+      <a href="#">Cookie Preferences</a>
+      <a href="#">Corporate Information</a>
+    </div>
+  </footer>
+</body>
+
+</html>

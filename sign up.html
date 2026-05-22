@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background: #000;
+            height: 100vh;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-image: url(./Neflix\ background.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            position: relative;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to top, #000, transparent);
+        }
+
+        /* Navbar */
+        .navbar {
+            position: absolute;
+            top: 20px;
+            left: 10%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            width: 120px;
+            height: 40px;
+            background-image: url(./logo.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* Form Wrapper */
+        .form-wrapper {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            padding: 60px 40px;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 4px;
+            color: #fff;
+            z-index: 10;
+        }
+
+        .form-wrapper h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        .form-control {
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .form-control input {
+            width: 100%;
+            height: 50px;
+            padding: 0 20px;
+            font-size: 1rem;
+            border-radius: 4px;
+            border: none;
+            background: #333;
+            color: #fff;
+        }
+
+        .form-control input:focus,
+        .form-control input:valid {
+            background: #444;
+        }
+
+        .form-control label {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #8c8c8c;
+            pointer-events: none;
+            transition: 0.2s ease;
+        }
+
+        .form-control input:focus~label,
+        .form-control input:valid~label {
+            font-size: 0.75rem;
+            transform: translateY(-130%);
+        }
+
+        button {
+            width: 100%;
+            padding: 16px 0;
+            font-size: 1rem;
+            background: #e50914;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: 0.2s ease;
+        }
+
+        button:hover {
+            background: #c40812;
+        }
+
+        .form-help {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+
+        .remember-me input {
+            margin-right: 5px;
+            accent-color: #b3b3b3;
+        }
+
+        .form-wrapper p a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .form-wrapper p a:hover {
+            text-decoration: underline;
+        }
+
+        .form-wrapper small {
+            display: block;
+            margin-top: 15px;
+            color: #b3b3b3;
+        }
+
+        .form-wrapper small a {
+            color: #0071eb;
+        }
+
+        /* Responsive */
+        /* Tablet */
+        @media (max-width: 740px) {
+            .form-wrapper {
+                width: 90%;
+                padding: 50px 20px;
+            }
+
+            .navbar {
+                left: 20px;
+                transform: none;
+            }
+
+            .logo {
+                width: 110px;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            .form-wrapper {
+                padding: 40px 15px;
+            }
+
+            .form-wrapper h2 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+
+            .form-control input {
+                height: 45px;
+                font-size: 0.9rem;
+            }
+
+            button {
+                padding: 14px 0;
+                font-size: 0.95rem;
+            }
+
+            .form-help {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .remember-me {
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Very Small Mobile (380px) */
+        @media (max-width: 380px) {
+            .form-wrapper {
+                padding: 30px 10px;
+            }
+
+            .form-wrapper h2 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+
+            .form-control input {
+                height: 40px;
+                font-size: 0.85rem;
+            }
+
+            button {
+                padding: 12px 0;
+                font-size: 0.9rem;
+            }
+
+            .form-help {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero-section">
+        <div class="overlay"></div>
+
+        <div class="navbar">
+            <a href="index1.html">
+                <div class="logo"></div>
+            </a>
+        </div>
+
+        <div class="form-wrapper">
+            <h2>Sign In</h2>
+            <form action="#">
+                <div class="form-control">
+                    <input type="text" required>
+                    <label>Email or phone number</label>
+                </div>
+                <div class="form-control">
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <button type="submit">Sign In</button>
+
+                <div class="form-help">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <a href="#">Need help?</a>
+                </div>
+            </form>
+            <p>New to Netflix? <a href="#">Sign up now</a></p>
+            <small>This page is protected by Google reCAPTCHA to ensure you're not a bot. <a href="#">Learn
+                    more.</a></small>
+        </div>
+    </div>
+</body>
+
+</html>

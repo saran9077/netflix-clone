@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Originals</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #141414;
+      color: #fff;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #000;
+      padding: 10px 50px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg');
+      width: 110px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 1rem;
+    }
+
+    .container {
+      padding: 60px 50px;
+    }
+
+    .container h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      font-weight: 1000;
+      /* text-align: center; */
+    }
+
+    .container p {
+      font-size: 1.1rem;
+      color: #ccc;
+      max-width: 800px;
+      line-height: 1.5;
+    }
+
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .row {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+
+    .row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card {
+      min-width: 230px;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .card img {
+      width: 100%;
+      height: 140px;
+      /* object-fit: cover; */
+      border-radius: 4px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card span {
+      display: block;
+      text-align: center;
+      margin-top: 8px;
+      color: #bbb;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 10px;
+      background-color: #000;
+      color: #777;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
+    /* More to Watch Section */
+    .more-to-watch {
+      text-align: center;
+      padding: 80px 5%;
+      border-top: 1px solid #222;
+    }
+
+    .more-to-watch h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .more-to-watch p {
+      font-size: 1.1rem;
+      color: #ccc;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.5;
+    }
+
+    .more-to-watch .join-now {
+      background-color: #e50914;
+      color: #fff;
+      padding: 12px 32px;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .more-to-watch .join-now:hover {
+      background-color: #f40612;
+    }
+
+    footer {
+      background-color: #000;
+      color: #777;
+      font-size: 0.9rem;
+      padding: 40px 5%;
+      text-align: center;
+      border-top: 1px solid #222;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .container {
+        padding: 40px 30px;
+      }
+
+      .container h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 10px;
+      }
+
+      .nav-links a {
+        font-size: 0.8rem;
+        margin-left: 0;
+      }
+
+      .container {
+        padding: 30px 20px;
+      }
+
+      .container h1 {
+        font-size: 1.8rem;
+      }
+
+      .card {
+        min-width: 180px;
+      }
+
+      .card img {
+        height: 110px;
+      }
+
+      .more-to-watch {
+        padding: 50px 20px;
+      }
+
+      .more-to-watch h2 {
+        font-size: 1.5rem;
+      }
+
+      .more-to-watch p {
+        font-size: 1rem;
+      }
+    }
+
+    /* --- For tablets and small laptops (max-width: 1024px) --- */
+    @media (max-width: 1024px) {
+      .media-center {
+        padding: 80px 40px;
+      }
+
+      .media-center h1 {
+        font-size: 2rem;
+      }
+
+      .media-center p {
+        font-size: 1.1rem;
+        max-width: 700px;
+      }
+
+      .media-center .btn {
+        padding: 12px 28px;
+        font-size: 1rem;
+      }
+    }
+
+    /* --- For tablets and large phones (max-width: 768px) --- */
+    @media (max-width: 768px) {
+      .media-center {
+        padding: 60px 30px;
+      }
+
+      .media-center h1 {
+        font-size: 1.8rem;
+      }
+
+      .media-center p {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .media-center .btn {
+        width: 60%;
+        max-width: 250px;
+      }
+    }
+
+    /* --- For mobile screens (max-width: 412px) --- */
+    @media (max-width: 412px) {
+      .media-center {
+        padding: 40px 20px;
+      }
+
+      .media-center h1 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+      }
+
+      .media-center p {
+        font-size: 0.9rem;
+        color: #d1d1d1;
+        margin-bottom: 20px;
+      }
+
+      .media-center .btn {
+        width: 80%;
+        padding: 10px 0;
+        font-size: 0.95rem;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index1.html" class="logo"></a>
+    <div class="nav-links">
+      <a href="#">UNLIMITED SHOWS & MOVIES</a>
+      <a href="#" style="background-color: #e50914; padding: 8px 16px; border-radius: 4px;">Join Now</a>
+      <a href="sign up.html"
+        style="background-color: #000; border: 1px solid #555; padding: 8px 16px; border-radius: 4px;">Sign In</a>
+    </div>
+  </header>
+  <div class="container">
+    <h1>Netflix Originals</h1>
+    <p>Netflix is the home of amazing original programming that you can't find anywhere else. Movies, TV shows, specials
+      and more, it's all tailored specifically to you.</p>
+
+    <h2>Your Next Watch</h2>
+    <div class="row">
+      <div class="card"><img src="./Your Next Watch/Kurukshetra.jpg" alt=""><span>Kurukshetra</span></div>
+      <div class="card"><img src="./Your Next Watch/The Ba000ds of Bollywood.jpg" alt=""><span>The Ba***ds of
+          Bollywood</span></div>
+      <div class="card"><img src="./Your Next Watch/Stranger Things.jpg" alt=""><span>Stranger Things</span></div>
+      <div class="card"><img src="./Your Next Watch/Squid Game.jpg" alt=""><span>Squid Game</span></div>
+      <div class="card"><img src="./Your Next Watch/Bon Appétit.jpg" alt=""><span>Bon Appétit</span></div>
+      <div class="card"><img src="./Your Next Watch/Money Heist.jpg" alt=""><span>Money Heist</span></div>
+      <div class="card"><img src="./Your Next Watch/Wednesday.jpg" alt=""><span>Wednesday</span></div>
+      <div class="card"><img src="./Your Next Watch/Genie, Make a wish.jpg" alt=""><span>Genie, Make a wish</span></div>
+      <div class="card"><img src="./Your Next Watch/When Life Gives You Tangerines.jpg" alt=""><span>When Life Gives You
+          Tangerines</span></div>
+
+    </div>
+    <h2>K-dramas</h2>
+    <div class="row">
+      <div class="card"><img src="./K-dramas/Genie, Make a wish.jpg" alt=""><span>Genie, Make a wish</span></div>
+      <div class="card"><img src="./K-dramas/Typhoon Family.jpg" alt=""><span>Typhoon Family</span></div>
+      <div class="card"><img src="./K-dramas/King the Land.jpg" alt=""><span>King the Land</span></div>
+      <div class="card"><img src="./K-dramas/When Life Gives You Tangerines.jpg" alt=""><span>When Life Gives You
+          Tangerines</span></div>
+      <div class="card"><img src="./K-dramas/All of Us Are Dead.jpg" alt=""><span>All of Us Are Dead</span></div>
+      <div class="card"><img src="./K-dramas/My Demon.jpg" alt=""><span>My Demon</span></div>
+      <div class="card"><img src="./K-dramas/Vincenzo.jpg" alt=""><span>Vincenzo</span></div>
+      <div class="card"><img src="./K-dramas/Business Proposal.jpg" alt=""><span>Business Proposal</span></div>
+
+    </div>
+
+    <h2>Bingeworthy TV Shows</h2>
+    <div class="row">
+      <div class="card"><img src="./Bingeworthy TV Shows/Wednesday.jpg" alt=""><span>Wednesday</span></div>
+      <div class="card"><img src="./Bingeworthy TV Shows/Alice in Borderland.jpg" alt=""><span>Alice in
+          Borderland</span></div>
+      <div class="card"><img src="./Bingeworthy TV Shows/Physical Asia.jpg" alt=""><span>Physical: Asia</span></div>
+      <div class="card"><img src="./Bingeworthy TV Shows/Mandala Murder.jpg" alt=""><span>Mandala Murder</span></div>
+      <div class="card"><img src="./Bingeworthy TV Shows/The Diplomat.jpg" alt=""><span>The Diplomat</span></div>
+      <div class="card"><img src="./Bingeworthy TV Shows/The Witcher.jpg" alt=""><span>The Witcher</span></div>
+      <div class="card"><img src="./Bingeworthy TV Shows/Ameriacn Manhunt-Osama bin Laden.jpg" alt=""><span>American
+          Manhunt:Osama bin Laden</span></div>
+      <div class="card"><img src="./Bingeworthy TV Shows/Delhi Crime.jpg" alt=""><span>Delhi Crime</span></div>
+
+    </div>
+
+    <h2>Comedy Movies</h2>
+    <div class="row">
+      <div class="card"><img src="./Comedy Movies/KPop Demon Hunter.jpg" alt=""><span>KPop Demon Hunter</span></div>
+      <div class="card"><img src="./Comedy Movies/Inspector Zende.jpg" alt=""><span>Inspector Zende</span></div>
+      <div class="card"><img src="./Comedy Movies/Caramelo.jpg" alt=""><span>Caramelo</span></div>
+      <div class="card"><img src="./Comedy Movies/Dhoom dhaam.jpg" alt=""><span>Dhoom dhaam</span></div>
+      <div class="card"><img src="./Comedy Movies/Love Untangled.jpg" alt=""><span>Love Untangled</span></div>
+      <div class="card"><img src="./Comedy Movies/Aap Jaisa Koi.jpg" alt=""><span>Aap Jaisa Koi</span></div>
+      <div class="card"><img src="./Comedy Movies/Kadhal - A Jackfruit Mystery.jpg" alt=""><span>Kadhal - A Jackfruit
+          Mystery</span></div>
+      <div class="card"><img src="./Comedy Movies/Darlings.jpg" alt=""><span>Darlings</span></div>
+
+    </div>
+
+    <h2></h2>
+    </header>
+  </div>
+
+
+
+  <!-- More to Watch Section -->
+  <section class="more-to-watch">
+    <h2>There's even more to watch.</h2>
+    <p>Netflix has an extensive library of feature films, documentaries, shows, anime, award-winning Netflix originals,
+      and more. Watch as much as you want, anytime you want.</p>
+    <a href="sign up.html"><button class="join-now">Join now</button></a>
+  </section>
+
+  <footer>
+    Questions? Contact us. <br><br>
+    FAQ | Help Centre | Terms of Use | Privacy | Cookie Preferences | Corporate Information
+    <br><br> © 2025 Netflix Clone by Saran
+  </footer>
+</body>
+
+</html>

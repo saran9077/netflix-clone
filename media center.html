@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Media Center</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #141414;
+      color: #fff;
+    }
+
+    /* 🔺 Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: linear-gradient(to bottom, #000 70%, transparent);
+    }
+
+    .navbar-left h1 {
+      color: #e50914;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .navbar-left span {
+      color: #fff;
+      font-size: 16px;
+      margin-left: 5px;
+    }
+
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .navbar-right select, 
+    .navbar-right a {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .navbar-right a.apply {
+      background-color: #000;
+      padding: 6px 14px;
+      border-radius: 4px;
+      border: 1px solid #fff;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .navbar-right a.login {
+      background-color: #e50914;
+      padding: 6px 14px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    /* 🎬 Hero Section */
+    .hero {
+      height: 60vh;
+      background: radial-gradient(50% 500% at 50% -420%, rgba(64, 97, 231, 0.4) 80%, rgba(0, 0, 0, 0.1) 100%), black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      max-width: 600px;
+      margin-bottom: 20px;
+    }
+
+    .hero input {
+      width: 90%;
+      max-width: 500px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+
+    /* 🎞 Filter Section */
+    .filters {
+      background-color: #1c1c1c;
+      padding: 20px 40px;
+    }
+
+    .filters h3 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-group button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-group button:hover {
+      background-color: #e50914;
+    }
+
+    /* 🖼 Movie Grid */
+    .movie-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .movie {
+      background-color: #222;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .movie:hover {
+      transform: scale(1.05);
+    }
+
+    .movie img {
+      width: 100%;
+      display: block;
+    }
+
+    .movie p {
+      padding: 10px;
+      font-size: 15px;
+      color: #ccc;
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- 🔺 Navbar -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <h1>NETFLIX <span>Media Center</span></h1>
+    </div>
+    <div class="navbar-right">
+      <select>
+        <option>English</option>
+        <option>हिन्दी</option>
+      </select>
+      <select>
+        <option>India</option>
+        <option>Global</option>
+      </select>
+      <a href="#" class="apply">Apply</a>
+      <a href="#" class="login">Press Log In</a>
+    </div>
+  </header>
+
+  <!-- 🎬 Hero Section -->
+  <section class="hero">
+    <h1>Discover stories and experiences to share with India.</h1>
+    <input type="text" placeholder="Search for Netflix titles and news">
+  </section>
+
+  <!-- 🎞 Filter Section -->
+  <section class="filters">
+    <h3>I'm interested in covering titles releasing in <strong>November</strong></h3>
+    <div class="btn-group">
+      <button>Film</button>
+      <button>Series</button>
+      <button>Documentary</button>
+      <button>Kids</button>
+      <button>Reality</button>
+    </div>
+  </section>
+
+  <!-- Movie Grid -->
+  <section class="movie-grid">
+    <div class="movie">
+      <img src="https://i.imgur.com/nU7pKqv.png" alt="The Sneetches">
+      <p>Dr. Seuss’ The Sneetches</p>
+    </div>
+    <div class="movie">
+      <img src="https://i.imgur.com/wrK2mHs.png" alt="The Vince Staples Show">
+      <p>The Vince Staples Show</p>
+    </div>
+    <div class="movie">
+      <img src="https://i.imgur.com/7RtM8Gk.png" alt="American Series">
+      <p>American Drama</p>
+    </div>
+    <div class="movie">
+      <img src="https://i.imgur.com/0Ylq8Az.png" alt="Korean Title">
+      <p>Korean Thriller</p>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix FAQ Section</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .faq-section {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .faq-section h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    details {
+      background-color: #2d2d2d;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    details:hover {
+      background-color: #414141;
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary svg {
+      transition: transform 0.3s ease;
+      color: #fff;
+    }
+
+    details[open] summary svg {
+      transform: rotate(45deg);
+    }
+
+    details p {
+      padding: 20px;
+      border-top: 1px solid #000;
+      background-color: #2d2d2d;
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.5;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ✅ Responsive only for text spacing — no SVG or width changes */
+    @media (max-width: 412px) {
+      .faq-section h1 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+      }
+
+      summary {
+        font-size: 1rem;
+        padding: 15px;
+      }
+
+      details p {
+        font-size: 0.95rem;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="faq-section">
+    <h1>Frequently Asked Questions</h1>
+
+    <details>
+      <summary>
+        <span>What is Netflix?</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36" width="36" height="36">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M17 17V3h2v14h14v2H19v14h-2V19H3v-2h14z" fill="currentColor"/>
+        </svg>
+      </summary>
+      <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, and more on thousands of internet-connected devices.</p>
+    </details>
+
+    <details>
+      <summary>
+        <span>How much does Netflix cost?</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36" width="36" height="36">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M17 17V3h2v14h14v2H19v14h-2V19H3v-2h14z" fill="currentColor"/>
+        </svg>
+      </summary>
+      <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range depending on your region.</p>
+    </details>
+
+    <details>
+      <summary>
+        <span>Where can I watch?</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36" width="36" height="36">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M17 17V3h2v14h14v2H19v14h-2V19H3v-2h14z" fill="currentColor"/>
+        </svg>
+      </summary>
+      <p>Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web or on your devices.</p>
+    </details>
+
+    <details>
+      <summary>
+        <span>How do I cancel?</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36" width="36" height="36">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M17 17V3h2v14h14v2H19v14h-2V19H3v-2h14z" fill="currentColor"/>
+        </svg>
+      </summary>
+      <p>Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks.</p>
+    </details>
+
+    <details>
+      <summary>
+        <span>Is Netflix good for kids?</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36" width="36" height="36">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M17 17V3h2v14h14v2H19v14h-2V19H3v-2h14z" fill="currentColor"/>
+        </svg>
+      </summary>
+      <p>The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly content.</p>
+    </details>
+  </div>
+</body>
+</html>
