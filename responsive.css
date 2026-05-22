@@ -1,0 +1,85 @@
+/* Tablet */
+@media (max-width: 768px) {
+    .inputs-container input {
+        width: 200px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero h5 {
+        font-size: 1rem;
+    }
+    .hero p {
+        font-size: 0.9rem;
+    }
+    .email-form input {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+    .movies-section {
+        padding: 50px;
+    }
+    .logo {
+        width: 100px;
+        height: 40px;
+    }
+    .language-select {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+    .reasons-section {
+        height: fit-content;
+        overflow: hidden;
+    }
+    .reason-cards {
+        display: block;
+        gap: 1rem;
+    }
+    .reason {
+        width: 100%;
+        padding: 1rem;
+        margin-top: 1rem;
+        height: 300px;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+    .inputs-container input {
+        width: 150px;
+    }
+}
+
+/* Very Small Mobile (380px) */
+@media (max-width: 380px) {
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+    .hero h5 {
+        font-size: 0.9rem;
+    }
+    .hero p {
+        font-size: 0.8rem;
+    }
+    .email-form input {
+        width: 90%;
+    }
+    .movies-section {
+        padding: 30px 20px;
+    }
+    .inputs-container input {
+        width: 130px;
+    }
+    .language-select {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+    .logo {
+        width: 90px;
+        height: 35px;
+    }
+}
